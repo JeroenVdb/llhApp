@@ -1,4 +1,4 @@
-llhApp
+Landlordhelper
 ======
 
 Landlordhelper Sencha App
