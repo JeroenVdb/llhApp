@@ -5,7 +5,7 @@
     models, controllers or views and when running "sencha app upgrade".
 
     Ideally changes to this file would be limited and most work would be done
-    in other places (such as Controllers). If Sencha Cmd cannot merge your
+    in other place (such as Controllers). If Sencha Cmd cannot merge your
     changes and its generated code, it will produce a "merge conflict" that you
     will need to resolve manually.
 */
@@ -27,10 +27,14 @@ Ext.application({
     ],
 
     views: [
-        'Main', 'Home', 'Nearby', 'KittensList'
+        'Main', 'Home', 'PlacesList'
     ],
 
-    stores: ['Kittens', 'Places'],
+    stores: ['Places'],
+	
+	controllers: [
+		'Places'			  
+	],
 
     icon: {
         '57': 'resources/icons/Icon.png',

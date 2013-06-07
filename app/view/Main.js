@@ -10,11 +10,8 @@ Ext.define('llhApp.view.Main', {
             {
                 xtype: 'homepanel'
             },
-            {
-                xtype: 'nearbypanel'
-            },
-            {
-                xtype: 'kittensList'
+			{
+                xtype: 'placesList'
             }
         ]
     }

@@ -3,7 +3,6 @@ Ext.define('llhApp.view.Home', {
     xtype: 'homepanel',
     
     config: {
-       
         title: 'Welcome',
         iconCls: 'home',
 
