@@ -4462,6 +4462,19 @@ body.x-desktop {
   content: "g";
 }
 
+/* line 260, /Users/jamieavins/git/SDK/touch/resources/themes/stylesheets/sencha-touch/base/mixins/_Class.scss */
+.x-tab .x-button-icon.glob e:before,
+.x-button .x-button-icon.globe:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-family: "Pictos";
+  content: "G";
+}
+
 /**
  * Creates a theme UI for buttons.
  * Also automatically generates UIs for {ui-label}-round and {ui-label}-small.
