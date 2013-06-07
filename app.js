@@ -27,8 +27,10 @@ Ext.application({
     ],
 
     views: [
-        'Main', 'Home', 'Nearby'
+        'Main', 'Home', 'Nearby', 'KittensList'
     ],
+
+    stores: ['Kittens', 'Places'],
 
     icon: {
         '57': 'resources/icons/Icon.png',

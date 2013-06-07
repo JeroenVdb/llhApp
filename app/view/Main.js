@@ -1,7 +1,7 @@
 Ext.define('llhApp.view.Main', {
     extend: 'Ext.tab.Panel',
     
-    requires: ['Ext.TitleBar', 'Ext.data.proxy.JsonP', 'Ext.dataview.List'],
+    requires: ['Ext.TitleBar', 'Ext.data.proxy.JsonP', 'Ext.DataView'],
 
     config: {
         tabBarPosition: 'bottom',
@@ -12,6 +12,9 @@ Ext.define('llhApp.view.Main', {
             },
             {
                 xtype: 'nearbypanel'
+            },
+            {
+                xtype: 'kittensList'
             }
         ]
     }
