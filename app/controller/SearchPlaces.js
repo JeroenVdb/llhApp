@@ -16,7 +16,6 @@ Ext.define('llhApp.controller.SearchPlaces', {
 			y = 0;
 		
 		Ext.device.Geolocation.getCurrentPosition({
-			frequency: 60000,
 			success: function(position) {
 				self.getPlaces(position.coords, newValue);
 			},
