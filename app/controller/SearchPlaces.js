@@ -21,7 +21,7 @@ Ext.define('llhApp.controller.SearchPlaces', {
 				self.getPlaces(position.coords, newValue);
 			},
 			failure: function() {
-				console.log("Watchposition: couldn't get coordinates");
+				console.log("CurrentPosition: couldn't get coordinates");
 			}
 		});
 	},

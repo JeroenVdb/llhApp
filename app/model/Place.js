@@ -7,8 +7,7 @@ Ext.define('llhApp.model.Place', {
     config: {
         fields: [
             "name",
-            "image",
-            { name: "cuteness", type: 'int' }
+            {name: "totalCheckins", mapping: "stats.checkinsCount"}
         ]
     }
 });

@@ -3,8 +3,8 @@ Ext.define('llhApp.view.PlacesListItem', {
     xtype : 'placeslistitem',
 
     requires: [
-        'Ext.Img',
-        'Ext.slider.Slider'
+        // 'Ext.Img',
+        // 'Ext.slider.Slider'
     ],
 
     config: {
@@ -12,14 +12,21 @@ Ext.define('llhApp.view.PlacesListItem', {
         dataMap: {
             getName: {
                 setHtml: 'name'
+            },
+            getTotalCheckins: {
+                setHtml: 'totalCheckins'
             }
         },
         name: {
             cls: 'x-name',
+            flex: 2
+        },
+        totalCheckins: {
+            cls: 'x-totalCheckins',
             flex: 1
         },
 		styleHtmlContent: true,
-		layout: { type: 'vbox', align: 'left' },
+		layout: { type: 'hbox', align: 'left' },
     },
 
     applyName: function(config) {
@@ -33,6 +40,20 @@ Ext.define('llhApp.view.PlacesListItem', {
 
         if (oldName) {
             this.remove(oldName);
+        }
+    },
+
+    applyTotalCheckins: function(config) {
+        return Ext.factory(config, Ext.Component, this.getTotalCheckins());
+    },
+    
+    updateTotalCheckins: function(newTotalCheckins, oldTotalCheckins) {
+        if (newTotalCheckins) {
+            this.add(newTotalCheckins);
+        }
+
+        if (oldTotalCheckins) {
+            this.remove(oldTotalCheckins);
         }
     }
 });
