@@ -12,6 +12,9 @@ Ext.define('llhApp.view.Main', {
             },
 			{
                 xtype: 'placesList'
+            },
+            {
+                xtype: 'searchPlace'
             }
         ]
     }

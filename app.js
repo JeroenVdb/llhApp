@@ -27,13 +27,13 @@ Ext.application({
     ],
 
     views: [
-        'Main', 'Home', 'PlacesList'
+        'Main', 'Home', 'PlacesList', 'SearchPlace'
     ],
 
     stores: ['Places'],
-	
+
 	controllers: [
-		'Places'			  
+		'Places', 'SearchPlaces'
 	],
 
     icon: {

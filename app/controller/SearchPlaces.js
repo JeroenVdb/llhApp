@@ -1,31 +1,31 @@
-Ext.define('llhApp.controller.Places', {
+Ext.define('llhApp.controller.SearchPlaces', {
     extend: 'Ext.app.Controller',
 	requires: ['Ext.device.Geolocation'],
 	config: {
-		refs: {placesList:'placesList'},
+		refs: {searchFormAction: '#searchvenue'},
 		control: {
-			placesList : {
-				show: 'getGoogleCoordinates'
+			searchFormAction : {
+				change: 'getGoogleCoordinates'
 			}
 		}
 	},
-	getGoogleCoordinates: function(){
+	getGoogleCoordinates: function(textField, newValue, oldValue, eOpts){
 		var self = this,
 			pos = {},
 			x = 0,
 			y = 0;
 		
-		Ext.device.Geolocation.watchPosition({
+		Ext.device.Geolocation.getCurrentPosition({
 			frequency: 60000,
-			callback: function(position) {
-				self.initializePlaceStore(position.coords);
+			success: function(position) {
+				self.getPlaces(position.coords, newValue);
 			},
 			failure: function() {
 				console.log("Watchposition: couldn't get coordinates");
 			}
 		});
 	},
-	initializePlaceStore: function(pos) {
+	getPlaces: function(pos, query) {
 		var fsPlaces = Ext.getStore('fsPlaces'),
 			storeProxy = fsPlaces.getProxy(),
 			date = new Date(),
@@ -40,10 +40,10 @@ Ext.define('llhApp.controller.Places', {
 		
 		var params = storeProxy.getExtraParams();
 		params['ll'] = pos.latitude + "," + pos.longitude;
+		params['query'] = query;
 		params['v'] = year + "" + month + "" + day;
-		params['query'] = "";
 		storeProxy.setExtraParams(params);
 		
-		fsPlaces.load();		
+		fsPlaces.load();
 	}
 });
