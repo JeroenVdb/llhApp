@@ -33,7 +33,7 @@ Ext.application({
     stores: ['Places'],
 
 	controllers: [
-		'Places', 'SearchPlaces'
+		'Places', 'SearchPlaces', 'HelperController'
 	],
 
     icon: {
