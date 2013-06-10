@@ -12,7 +12,7 @@ Ext.define('llhApp.view.SearchPlace', {
         iconCls: 'search',
         useComponents: true,
         cls: 'search-place-list',
-        store: 'fsPlaces',
+        store: 'fsSearchPlaces',
         defaultType: 'placeslistitem',
 
 		styleHtmlContent: true,

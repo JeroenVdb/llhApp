@@ -30,7 +30,7 @@ Ext.application({
         'Main', 'Home', 'PlacesList', 'SearchPlace'
     ],
 
-    stores: ['Places'],
+    stores: ['Places','SearchPlaces'],
 
 	controllers: [
 		'Places', 'SearchPlaces', 'HelperController'

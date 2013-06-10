@@ -2,9 +2,20 @@ Ext.define('llhApp.controller.HelperController', {
     extend: 'Ext.app.Controller',
 	requires: ['Ext.device.Geolocation'],
 	
-	getPlaces: function(pos, query){
-		var fsPlaces = Ext.getStore('fsPlaces'),
-			storeProxy = fsPlaces.getProxy(),
+	getCurrentPosition: function(cb, v){
+		Ext.device.Geolocation.getCurrentPosition({
+			success: function(position) {
+				cb(position.coords, v);
+			},
+			failure: function() {
+				console.log("getCurrentPosition: couldn't get coordinates");
+			}
+		});
+	},
+	
+	getPlaces: function(pos, storeId, query){
+		var placesStore = Ext.getStore(storeId),
+			storeProxy = placesStore.getProxy(),
 			date = new Date(),
 			year = date.getFullYear(),
 			month = date.getMonth() + 1,
@@ -20,7 +31,6 @@ Ext.define('llhApp.controller.HelperController', {
 		params['query'] = query;
 		params['v'] = year + "" + month + "" + day;
 		storeProxy.setExtraParams(params);
-		
-		fsPlaces.load();
+		placesStore.load();
 	}
 });
