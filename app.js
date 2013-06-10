@@ -30,10 +30,10 @@ Ext.application({
         'Main', 'Home', 'PlacesList', 'SearchPlace'
     ],
 
-    stores: ['Places','SearchPlaces'],
+    stores: ['PlacesStore','SearchPlacesStore'],
 
 	controllers: [
-		'Places', 'SearchPlaces', 'HelperController'
+		'PlacesController', 'SearchPlacesController', 'HelperController'
 	],
 
     icon: {

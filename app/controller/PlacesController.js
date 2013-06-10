@@ -1,4 +1,4 @@
-Ext.define('llhApp.controller.Places', {
+Ext.define('llhApp.controller.PlacesController', {
     extend: 'llhApp.controller.HelperController',
 	config: {
 		refs: {refreshbutton: '#refreshbutton', placesList:'placesList'},

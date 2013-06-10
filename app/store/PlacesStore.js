@@ -2,13 +2,13 @@
  * A simple store that has predefined data. It uses the {@link Example.model.Place}
  * model for it's fields definition.
  */
-Ext.define('llhApp.store.SearchPlaces', {
+Ext.define('llhApp.store.PlacesStore', {
     extend: 'Ext.data.Store',
     requires: ['llhApp.model.Place'],
 	config: {
         model: 'llhApp.model.Place',
 		autoLoad: false,
-		storeId: 'fsSearchPlaces',
+		storeId: 'fsPlaces',
         proxy: {
             type: 'jsonp',
             url: 'https://api.foursquare.com/v2/venues/search',

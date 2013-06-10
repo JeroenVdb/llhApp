@@ -1,4 +1,4 @@
-Ext.define('llhApp.controller.SearchPlaces', {
+Ext.define('llhApp.controller.SearchPlacesController', {
     extend: 'llhApp.controller.HelperController',
 	config: {
 		refs: {searchFormAction: '#searchvenue'},
