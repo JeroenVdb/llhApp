@@ -17,10 +17,17 @@ Ext.define('llhApp.view.PlacesList', {
 		styleHtmlContent: true,
         scrollable: true,
 
-        items: {
-            docked: 'top',
-            xtype: 'titlebar',
-            title: 'Landlord - nearby'
-        },
+        items: [
+			{
+				docked: 'top',
+				xtype: 'titlebar',
+				title: 'Landlord - nearby'
+			},
+			{
+				xtype: 'button',
+				id: 'refreshbutton',
+				text: 'refresh locations'
+			}
+		]
     }
 });
